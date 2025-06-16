@@ -4,9 +4,9 @@ metadata:
   name: app-of-apps-cursor
   namespace: app-of-apps-cursor
 spec:
-  project: signal
+  project: default
   source:
-    repoURL: https://github.com/your-username/app-of-apps-cursor.git
+    repoURL: https://github.com/draskomikic/app-of-apps-cursor.git
     targetRevision: HEAD
     path: apps
   destination:

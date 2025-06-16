@@ -4,9 +4,9 @@ metadata:
   name: guestbook-app
   namespace: app-of-apps-cursor-guestbook
 spec:
-  project: signal
+  project: default
   source:
-    repoURL: https://github.com/argoproj/argocd-example-apps
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
     targetRevision: HEAD
     path: guestbook
   destination:
