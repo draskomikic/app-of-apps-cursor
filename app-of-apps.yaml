@@ -2,16 +2,20 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app-of-apps-cursor
-  namespace: app-of-apps-cursor
+  namespace: argo-cd
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
 spec:
   project: signal
   source:
     repoURL: https://github.com/draskomikic/app-of-apps-cursor.git
     targetRevision: HEAD
     path: apps
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: app-of-apps-cursor
+    namespace: argo-cd
   syncPolicy:
     automated:
       prune: true

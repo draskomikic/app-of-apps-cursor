@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: guestbook-app
-  namespace: app-of-apps-cursor-guestbook
+  namespace: argo-cd
 spec:
   project: signal
   source:
@@ -11,8 +11,8 @@ spec:
     path: guestbook
   destination:
     server: https://kubernetes.default.svc
-    namespace: app-of-apps-cursor-guestbook
+    namespace: argo-cd
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true 
+      selfHeal: true
