@@ -11,7 +11,7 @@ spec:
     path: guestbook
   destination:
     server: https://kubernetes.default.svc
-    namespace: argo-cd
+    namespace: app-of-apps-cursor
   syncPolicy:
     automated:
       prune: true

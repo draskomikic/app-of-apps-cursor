@@ -15,8 +15,8 @@ spec:
       recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: argo-cd
+    namespace: app-of-apps-cursor
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true 
+      selfHeal: true
