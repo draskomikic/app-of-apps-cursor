@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-app
+  namespace: app-of-apps-cursor-guestbook
+spec:
+  project: signal
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
+    path: guestbook
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: app-of-apps-cursor-guestbook
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true 
